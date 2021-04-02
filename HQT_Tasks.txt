@@ -1,0 +1,23 @@
+﻿[] [K]	- Thêm cơ sở dữ liệu => generate script.
+
+[] [VLK]- Stored Procedure: tập trung xây dựng cho 12 trường hợp tranh chấp đồng thời
+		1. Thay đổi thông tin nhà (Nhân viên)
+		2. Thay đổi đồng loạt thông tin nhà (Quản trị)
+	[V]	3. Xem danh sách nhà theo các tiêu chí: khoảng giá, giá thấp nhất hiện có, số lượng phòng, địa điểm, loại nhà.
+			--> Hiển thị số lượng nhà.
+			--> Hiển thị danh sách nhà.
+	[V] 	4. Xem nhà theo mã.
+		5. Xóa nhà (Nhân viên phụ trách nếu là nhà cũ)
+		6. Xóa nhà (Quản trị đối với nhà chưa có NV Phụ trách)
+		7. Tạo hợp đồng mới: mã KH, mã nhà, mã NV, [ngày hết hạn] => cập nhật thông tin trạng thái nhà.
+		8. Kiểm tra tiêu chí khách hàng:
+			--> Danh sách khách hàng theo tiêu chí.
+			--> (Liên hệ)
+			--> Cập nhật Đã Liên Hệ với những khách đồng ý xem nhà.
+			--> Thêm thông tin xem nhà trong bảng chi tiết _ xem nhà
+		9. Cập nhật nhân viên phụ trách cho các nhà mới:
+			--> Danh sách nhà có mãNV = NULL và số lượng.
+			--> Top nhân viên phụ trách ít nhà tương ứng với số lượng trong danh sách.
+			--> Cập nhật nhân viên phụ trách cho các nhà.
+
+[]	- Giao diện
