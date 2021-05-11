@@ -1,0 +1,25 @@
+USE QuanLyNha
+GO
+
+IF OBJECT_ID('U21') IS NOT NULL
+	DROP PROCEDURE U21
+GO
+
+CREATE PROCEDURE U21(@from as int, @to as int)
+AS
+	Update Nha Set Gia = 2000 Where ID = 6
+	SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+	BEGIN TRANSACTION
+		BEGIN TRY
+			SELECT COUNT(*) AS So_luong FROM Nha Where Gia >= @from AND Gia <= @to
+			WAITFOR DELAY '00:00:05'
+			SELECT * FROM Nha Where Gia >= @from AND Gia <= @to
+		END TRY
+		BEGIN CATCH
+			print 'Loi tim kiem nha'
+			Rollback Transaction
+		END CATCH
+	COMMIT TRANSACTION
+GO
+
+EXEC U21 2000, 4000
